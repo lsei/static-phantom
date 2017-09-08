@@ -1,0 +1,23 @@
+{
+  "name": "static-phantom",
+  "version": "0.0.1",
+  "description": "Save react sites as static html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsei/static-phantom.git"
+  },
+  "author": "Lucas Seidenfaden <hello@lucasseidenfaden.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lsei/static-phantom/issues"
+  },
+  "homepage": "https://github.com/lsei/static-phantom#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "phantom": "^4.0.5"
+  }
+}
