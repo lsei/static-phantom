@@ -19,5 +19,8 @@
   "dependencies": {
     "mkdirp": "^0.5.1",
     "phantom": "^4.0.5"
-  }
+  },
+  "engines" : { 
+    "node" : ">=8.0.0" 
+  } 
 }

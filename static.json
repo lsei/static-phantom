@@ -1,0 +1,10 @@
+{
+	"targetDomain": "example.com",
+	"sourceDomain": "localhost:8080",
+	"pages": [
+		"/",
+		"/about",
+		"/team",
+		"/contact"
+	]
+}

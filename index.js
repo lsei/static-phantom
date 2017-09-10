@@ -1,16 +1,14 @@
+var path = require('path');
 var phantom = require('phantom');
 var { 
     writeFileAsync,
-    mkdirpPromise 
+    mkdirpPromise
 } = require('./tools.js');
 
+var directory = path.dirname(process.argv[1])
+var config = require('./static.json');
 
-var domain = 'http://localhost:8080'
-var paths = [
-    '',
-    '/propellor',
-    '/team'
-];
+
 
 function savePage(domain, path) {
     return new Promise(async function(resolve, reject){
@@ -31,7 +29,7 @@ function savePage(domain, path) {
     });
 }
 
-Promise.all(paths.map(path => savePage(domain, path)))
+Promise.all(config.pages.map(path => savePage(config.targetDomain, path)))
     .then(() => {
         console.log('done!');
         process.exit()
