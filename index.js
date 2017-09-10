@@ -1,7 +1,9 @@
-var fs = require('fs');
-var path = require('path');
 var phantom = require('phantom');
-var mkdirp = require('mkdirp');
+var { 
+    writeFileAsync,
+    mkdirpPromise 
+} = require('./tools.js');
+
 
 var domain = 'http://localhost:8080'
 var paths = [
@@ -10,10 +12,11 @@ var paths = [
     '/team'
 ];
 
-var savePage = function (domain, path) {
+function savePage(domain, path) {
     return new Promise(async function(resolve, reject){
 
-        var url = domain + path;
+        const url = domain + path;
+
         var filePath = "./static" + path + '/' + 'index.html';
         var ph = await phantom.create();
         var page = await ph.createPage();
