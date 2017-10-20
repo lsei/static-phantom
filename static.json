@@ -3,8 +3,8 @@
 	"sourceDomain": "localhost:8080",
 	"pages": [
 		"/",
-		"/about",
+		"/vault",
+		"/instances",
 		"/team",
-		"/contact"
 	]
 }

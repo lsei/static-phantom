@@ -23,4 +23,7 @@ function mkdirpPromise(path) {
   })
 }
 
-module.exports = { writeFileAsync, mkdirpPromise }
+module.exports = { 
+  writeFileAsync, 
+  mkdirpPromise 
+}
