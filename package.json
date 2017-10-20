@@ -1,6 +1,6 @@
 {
   "name": "static-phantom",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Save react sites as static html",
   "main": "index.js",
   "scripts": {

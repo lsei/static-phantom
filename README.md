@@ -5,8 +5,12 @@ This tool will help you create static versions of your site which can be hosted 
 
 ## Todos
 - [ ] Figure out how to package this up as a useful tool. 
-- [ ] Tests or somethign
+- [ ] Tests or something
 - [ ] Handle 404s / http errors
 - [ ] Domain replacement 
 - [ ] Screen size setting
 - [ ] Other sites
+
+## Version History
+- 0.0.1 First Release
+- 0.1.0 Copy folders to static folder
