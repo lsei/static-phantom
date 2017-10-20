@@ -1,4 +1,5 @@
 var path = require('path');
+var fs = require('fs-extra');
 var phantom = require('phantom');
 var { 
     writeFileAsync,
@@ -15,7 +16,7 @@ function savePage(domain, urlPath) {
 
         const url = domain + urlPath;
 
-        console.log(url);
+        console.log('Loading Url: ', url);
         
         const dirPath = path.join(directory, "static",  urlPath);
         const filePath = path.join(dirPath, "index.html");
@@ -49,7 +50,7 @@ function copyFolders(folders) {
             resolve();
             return;
         }
-        Promise.all(folders.map(config => savePage(config)))
+        Promise.all(folders.map(config => copyFolder(config)))
             .then(() => {
                 resolve();
             })
@@ -57,7 +58,8 @@ function copyFolders(folders) {
 }
 
 function copyFolder(config) {
-
+    
+    console.log('Copying over: '+ config.from);
     const from = path.join(directory, config.from);
     const to = path.join(directory, "static", config.to);
     return fs.copy(from, to);
@@ -73,7 +75,7 @@ async function run() {
 
     Promise.all(config.pages.map(urlPath => savePage(config.sourceDomain, urlPath)))
         .then(() => {
-            console.log('done!');
+            console.log('Done!');
             process.exit()
         })
 
